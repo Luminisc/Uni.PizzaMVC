@@ -5,14 +5,19 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-@{ foreach (var pizza in Model.Pizzas)
-    {
-        <h4>@pizza.Name</h4>
-        <h5>Price: @pizza.Price</h5>
-        <ul>
-            @foreach (var ingredient in pizza.Ingredients)
-            {
-                <li>@ingredient</li>
-            }
-        </ul>
-    }}
+<form action="@Url.Action("About", "Home")" method="post">
+    @{int i = 0; }
+    @{ foreach (var pizza in Model.Pizzas)
+        {
+            <h4>@pizza.Name</h4>
+            <h5>Price: @pizza.Price</h5>
+            <ul>
+                @foreach (var ingredient in pizza.Ingredients)
+                {
+                    <li>@ingredient</li>
+                }
+            </ul>
+            <button name="selection" type="submit" value="@i">Order</button>
+            i++;
+        }}
+</form>

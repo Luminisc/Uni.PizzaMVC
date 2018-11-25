@@ -14,11 +14,19 @@ namespace Uni.PizzaMVC.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult About()
         {
             ViewBag.Message = "Select your damned pizza!";
 
             return View(new PizzaSelectionViewModel() { Pizzas = Statics.Pizzas });
+        }
+
+        [HttpPost]
+        public ActionResult About(int selection)
+        {
+            Statics.ShoppingCart.Add(Statics.Pizzas[selection]);
+            return About();
         }
 
         public ActionResult Contact()
@@ -69,5 +77,7 @@ namespace Uni.PizzaMVC.Controllers
                 }
             }
         };
+
+        public static List<PizzaViewModel> ShoppingCart = new List<PizzaViewModel>();
     }
 }

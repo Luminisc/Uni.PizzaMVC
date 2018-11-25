@@ -22,7 +22,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Pizza selection", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Shopping cart" + (Uni.PizzaMVC.Controllers.Statics.ShoppingCart.Count > 0 ? $" ({Uni.PizzaMVC.Controllers.Statics.ShoppingCart.Count})" : ""), "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
