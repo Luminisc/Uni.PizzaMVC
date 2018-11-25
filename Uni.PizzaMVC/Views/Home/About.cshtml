@@ -1,7 +1,18 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@model Uni.PizzaMVC.Models.PizzaSelectionViewModel
+@{
+    ViewBag.Title = "Choose your pizza";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+@{ foreach (var pizza in Model.Pizzas)
+    {
+        <h4>@pizza.Name</h4>
+        <h5>Price: @pizza.Price</h5>
+        <ul>
+            @foreach (var ingredient in pizza.Ingredients)
+            {
+                <li>@ingredient</li>
+            }
+        </ul>
+    }}
