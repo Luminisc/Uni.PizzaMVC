@@ -31,9 +31,9 @@ namespace Uni.PizzaMVC.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your pizza selection";
 
-            return View();
+            return View(new ShoppingCartViewModel() { Pizzas = Statics.ShoppingCart });
         }
     }
 

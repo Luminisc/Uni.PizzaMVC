@@ -153,6 +153,7 @@
     </Compile>
     <Compile Include="Models\PizzaSelectionViewModel.cs" />
     <Compile Include="Models\PizzaViewModel.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
